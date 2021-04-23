@@ -77,6 +77,7 @@ Comment out user entries in shiro.ini, e.g.
 Add PAM entries to main section in shiro.ini, e.g.
 
 ```
+[main]
 ### A sample PAM configuration
 pamRealm=org.apache.zeppelin.realm.PamRealm
 pamRealm.service=sshd
@@ -86,12 +87,14 @@ securityManager.realms = $pamRealm
 Have admin entry in roles section in shiro.ini, e.g.
 
 ```
+[roles]
 zepadmins = *
 ```
 
 Make sure you include groups in roles in urls section in shiro.ini, e.g.
 
 ```
+[urls]
 /api/version = anon
 /api/cluster/address = anon
 # Allow all authenticated users to restart interpreters on a notebook page.
