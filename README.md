@@ -25,17 +25,15 @@ Software:
 Configuration:
 
 - A group for Zeppelin users
-  - a group name e.g. zepusers
-  - a group id e.g. 2001
+  - a group name e.g. zepusers with a group id (GID) e.g. 2001
   - Same group name for system (/etc/group) and roles in Zeppelin/Shiro (shiro.ini)
 - A group for Zeppelin admins
-  - a group name e.g. zepadmins
-  - a group id e.g. 2002
+  - a group name e.g. zepadmins with a group id (GID) e.g. 2002
   - Same group name for system (/etc/group) and roles in Zeppelin/Shiro (shiro.ini)
 - Zeppelin users and ids
-  - A user name e.g. zepuser
+  - A user name e.g. zepuser with a user id (UID) e.g. 2001
 - Zeppelin admins and ids
-  - A user name e.g. zepadmin
+  - A user name e.g. zepadmin with a user id (UID) e.g. 2002
 
 Instructions
 ------------
