@@ -20,7 +20,8 @@ Using PAM requires the user Zeppelin is running as to have read access to the sh
 therefore I would recommend using OpenLDAP as solution, to avoid a potential XSS.
 
 If users don't need system access or to upload files manually for processing,
-then you could set the user shell to /bin/false to restrict access.
+then you could set the user shell to /bin/false to restrict access file read.
+Having said that, you should lock down top level access to valid users anyway.
 
 Requirements
 ------------
