@@ -1,3 +1,5 @@
+![alt tag](https://raw.githubusercontent.com/lateralblast/zeppelin-shiro-pam/master/cat_zeppelin.png)
+
 Zeppelin Shiro PAM
 ==================
 
