@@ -55,6 +55,7 @@ $ sudo groupadd admin
 $ sudo useradd -s /bin/bash -d /home/zepserver -m -G user zepserver
 $ sudo useradd -s /bin/bash -d /home/zepuser -m -G user zepuser
 $ sudo useradd -s /bin/bash -d /home/zepadmin -m -G admin zepadmin
+$ sudo passwd zepserver
 $ sudo passwd zepuser
 $ sudo passwd zepadmin
 ```
