@@ -14,6 +14,8 @@ These instructions are designed as an attempt to make the process easier.
 These instructions are for the default OOTB Zeppelin install using HTTP on port 8080.
 You should enable and configure HTTPS. Details for doing this are not included here.
 
+I have not been able to find a method for mapping alternate groups to user and admin like can be done with LDAP.
+
 Requirements
 ------------
 
@@ -25,11 +27,9 @@ Software:
 Configuration:
 
 - A group for Zeppelin users
-  - a group name e.g. zepusers with a group id (GID) e.g. 2001
-  - Same group name for system (/etc/group) and roles in Zeppelin/Shiro (shiro.ini)
+  - a group name user with a group id (GID) e.g. 2001
 - A group for Zeppelin admins
-  - a group name e.g. zepadmins with a group id (GID) e.g. 2002
-  - Same group name for system (/etc/group) and roles in Zeppelin/Shiro (shiro.ini)
+  - a group name admin with a group id (GID) e.g. 2002
 - Zeppelin users and ids
   - A user name e.g. zepuser with a user id (UID) e.g. 2001
 - Zeppelin admins and ids
@@ -41,10 +41,12 @@ Instructions
 Create users and groups:
 
 ```
-$ sudo groupadd zepusers
-$ sudo groupadd zepadmins
-$ sudo useradd -s /bin/bash -d /home/zepuser -m -G zepusers zepuser
-$ sudo useradd -s /bin/bash -d /home/zepadmin -m -G zepadmins zepadmin
+$ sudo groupadd user
+$ sudo groupadd admin
+$ sudo useradd -s /bin/bash -d /home/zepuser -m -G user zepuser
+$ sudo useradd -s /bin/bash -d /home/zepadmin -m -G admin zepadmin
+$ sudo passwd zepuser
+$ sudo passwd zepadmin
 ```
 
 Install Zeppelin:
@@ -79,8 +81,8 @@ Add PAM entries to main section in shiro.ini, e.g.:
 ```
 [main]
 ### A sample PAM configuration
-pamRealm=org.apache.zeppelin.realm.PamRealm
-pamRealm.service=sshd
+pamRealm = org.apache.zeppelin.realm.PamRealm
+pamRealm.service = sshd
 securityManager.realms = $pamRealm
 ```
 
