@@ -43,8 +43,8 @@ Create users and groups:
 ```
 $ sudo groupadd zepusers
 $ sudo groupadd zepadmins
-$ sudo useradd -s /bin/bash -d /home/zepuser -m -G zepusers
-$ sudo useradd -s /bin/bash -d /home/zepadmin -m -G zepadmins
+$ sudo useradd -s /bin/bash -d /home/zepuser -m -G zepusers zepuser
+$ sudo useradd -s /bin/bash -d /home/zepadmin -m -G zepadmins zepadmin
 ```
 
 Install Zeppelin:
