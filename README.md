@@ -16,6 +16,9 @@ You should enable and configure HTTPS. Details for doing this are not included h
 
 I have not been able to find a method for mapping alternate groups to user and admin like can be done with LDAP.
 
+Using PAM requires the user Zeppelin is running as to have read access to the shadow file,
+therefore I would recommend using OpenLDAP as solution, to avoid a potential XSS.
+
 Requirements
 ------------
 
