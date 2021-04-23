@@ -38,7 +38,7 @@ Configuration:
 Instructions
 ------------
 
-Create users and groups.
+Create users and groups:
 
 ```
 $ sudo groupadd zepusers
@@ -47,7 +47,7 @@ $ sudo useradd -s /bin/bash -d /home/zepuser -m -G zepusers
 $ sudo useradd -s /bin/bash -d /home/zepadmin -m -G zepadmins
 ```
 
-Install Zeppelin
+Install Zeppelin:
 
 ```
 $ wget https://downloads.apache.org/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0-bin-all.tgz 
@@ -61,7 +61,7 @@ $ cp ./zeppelin-0.9.0-bin-all/conf/shiro.ini.template ./zeppelin-0.9.0-bin-all/c
 $ vi ./zeppelin-0.9.0-bin-all/conf/shiro.ini
 ```
 
-Comment out user entries in shiro.ini, e.g. 
+Comment out user entries in shiro.ini, e.g.:
 
 ```
 [users]
@@ -74,7 +74,7 @@ Comment out user entries in shiro.ini, e.g.
 #user3 = password4, role2
 ```
 
-Add PAM entries to main section in shiro.ini, e.g.
+Add PAM entries to main section in shiro.ini, e.g.:
 
 ```
 [main]
@@ -84,14 +84,14 @@ pamRealm.service=sshd
 securityManager.realms = $pamRealm
 ```
 
-Have admin entry in roles section in shiro.ini, e.g.
+Have admin entry in roles section in shiro.ini, e.g.:
 
 ```
 [roles]
 zepadmins = *
 ```
 
-Make sure you include groups in roles in urls section in shiro.ini, e.g.
+Make sure you include groups in roles in urls section in shiro.ini, e.g.:
 
 ```
 [urls]
