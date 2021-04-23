@@ -26,6 +26,7 @@ Software:
 
 Configuration:
 
+- A user for the zeppelin server to run as e.g. zepserver
 - A group for Zeppelin users
   - a group name user with a group id (GID) e.g. 2001
 - A group for Zeppelin admins
@@ -43,6 +44,7 @@ Create users and groups:
 ```
 $ sudo groupadd user
 $ sudo groupadd admin
+$ sudo useradd -s /bin/bash -d /home/zepserver -m -G user zepserver
 $ sudo useradd -s /bin/bash -d /home/zepuser -m -G user zepuser
 $ sudo useradd -s /bin/bash -d /home/zepadmin -m -G admin zepadmin
 $ sudo passwd zepuser
@@ -74,6 +76,13 @@ Comment out user entries in shiro.ini, e.g.:
 #user1 = password2, role1, role2
 #user2 = password3, role3
 #user3 = password4, role2
+```
+
+Allow zeppelin server user to read shadow file (required for PAM authentication to work):
+
+```
+$ sudo apt install -y acl
+$ sudo setfacl -m user:zepserver:r /etc/shadow
 ```
 
 Add PAM entries to main section in shiro.ini, e.g.:
