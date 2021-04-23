@@ -54,6 +54,22 @@ $ sudo passwd zepuser
 $ sudo passwd zepadmin
 ```
 
+Example group file entries:
+
+```
+user:x:2001:zepuser
+admin:x:2002:zepadmin
+zepuser:x:1001:
+zepadmin:x:1002:
+```
+
+Example passwd file entries:
+
+```
+zepuser:x:1001:1001::/home/zepuser:/bin/bash
+zepadmin:x:1002:1002::/home/zepadmin:/bin/bash
+```
+
 Install Zeppelin:
 
 ```
